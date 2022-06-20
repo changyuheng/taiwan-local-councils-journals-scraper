@@ -22,7 +22,7 @@ lcjournal-scraper config browser "firefox"
 lcjournal-scraper scrape [-c <議會 1> [-c <議會 2> ...]] "<關鍵字>"
 ```
 
-**範例**：在「彰化縣議會」及「雲林縣議會」的記錄中搜尋「供電」
+**範例**：在「彰化縣議會」及「雲林縣議會」的議事錄中搜尋「供電」
 
 ```
 lcjournal-scraper scrape -c 彰化縣議會 -c 雲林縣議會 "供電"
