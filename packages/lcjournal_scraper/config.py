@@ -7,10 +7,8 @@ import dacite
 import tomli
 import tomli_w
 
-from .log import get_logger
 
-
-CONFIG_VERSION: int = 2
+CONFIG_VERSION: int = 3
 CONFIG_FILENAME: str = 'config.toml'
 CONFIG_PATH: pathlib.Path = pathlib.Path(CONFIG_FILENAME)
 
@@ -18,9 +16,8 @@ CONFIG_PATH: pathlib.Path = pathlib.Path(CONFIG_FILENAME)
 @dataclasses.dataclass
 class Config:
     data_version: int = CONFIG_VERSION
-    account: str = ""
-    password: str = ""
     browser: str = "edge"
+    gh_token: str = ""
 
 
 def get_config() -> Config:

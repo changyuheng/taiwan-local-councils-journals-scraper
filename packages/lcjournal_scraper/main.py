@@ -72,7 +72,7 @@ def get_arg_parser() -> argparse.ArgumentParser:
     subparsers: argparse._SubParsersAction = parser.add_subparsers()
 
     subparser_config: argparse.ArgumentParser = subparsers.add_parser("config", help="read and write config")
-    subparser_config.add_argument("field", nargs='?', choices=["browser"])
+    subparser_config.add_argument("field", nargs='?', choices=["browser", "gh_token"])
     subparser_config.add_argument("value", nargs='?')
     subparser_config.set_defaults(func=config)
 
@@ -123,5 +123,8 @@ def main() -> int:
     if not hasattr(args, 'func'):
         arg_parser.print_help()
         return 1
+
+    if get_config().gh_token:
+        os.environ['GH_TOKEN'] = get_config().gh_token
 
     return args.func(args)
