@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lcjournal-scraper"
-version = "1.1.1"
+version = "1.2.0"
 description = "中華民國地方議會議事錄總庫檢索結果截取器"
 license = "MPL-2.0"
 authors = ["Johann Chang <mr.changyuheng@gmail.com>"]
