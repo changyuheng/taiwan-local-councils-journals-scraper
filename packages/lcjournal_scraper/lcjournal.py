@@ -155,7 +155,7 @@ class SimpleLCJournal:
                     #         element.find_elements(By.CLASS_NAME, "field_value")):
                     #     result[field.text.removeprefix(" » ").strip()] = value.text.removeprefix(" : ").strip()
                     result |= self._get_metas_from_search_result_link_element(
-                        self.browser_driver.find_element(By.XPATH, ".//span[@class='acc_link']/a"))
+                        element.find_element(By.XPATH, ".//span[@class='acc_link']/a"))
                     result["相關內容摘要"] = element.find_element(By.CLASS_NAME, "result_text").text.strip() \
                         .replace("<search>", "") \
                         .replace("</search>", "")
